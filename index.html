@@ -6,17 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CodeMirror</title>
   <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="./css/paper.css">
+  <link rel="stylesheet" href="./css/codemirror-theme.css">
   <script src="./node_modules/codemirror/lib/codemirror.js"></script>
   <script src="./node_modules/codemirror/addon/selection/active-line.js"></script>
   <script src="./node_modules/codemirror/addon/edit/closebrackets.js"></script>
   <script src="./node_modules/codemirror/addon/edit/continuelist.js"></script>
   <script src="./node_modules/codemirror/addon/mode/overlay.js"></script>
   <script src="./node_modules/codemirror/mode/markdown/markdown.js"></script>
+  <script src="./node_modules/codemirror/mode/javascript/javascript.js"></script>
   <script src="./node_modules/codemirror/mode/gfm/gfm.js"></script>
   <style type="text/css">
+    html {
+      font-size: 62.5%;
+    }
     body {
-      font-size: 16px;
+      font-size: 1.4rem;
       line-height: 1.5;
     }
   </style>
@@ -25,8 +29,7 @@
   <script>
     var myCodeMirror = CodeMirror(document.body, {
       value: '# head1\n### head3',
-      mode: "markdown",
-      theme: 'paper',
+      mode: "gfm",
       lineWrapping: true,
       styleActiveLine: true,
       autoCloseBrackets: true,
