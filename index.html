@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CodeMirror</title>
+  <link rel="stylesheet" href="./node_modules/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="./css/paper.css">
+  <script src="./node_modules/codemirror/lib/codemirror.js"></script>
+  <script src="./node_modules/codemirror/addon/selection/active-line.js"></script>
+  <script src="./node_modules/codemirror/addon/edit/closebrackets.js"></script>
+  <script src="./node_modules/codemirror/addon/edit/continuelist.js"></script>
+  <script src="./node_modules/codemirror/addon/mode/overlay.js"></script>
+  <script src="./node_modules/codemirror/mode/markdown/markdown.js"></script>
+  <script src="./node_modules/codemirror/mode/gfm/gfm.js"></script>
+  <style type="text/css">
+    body {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var myCodeMirror = CodeMirror(document.body, {
+      value: '# head1\n### head3',
+      mode: "markdown",
+      theme: 'paper',
+      lineWrapping: true,
+      styleActiveLine: true,
+      autoCloseBrackets: true,
+      extraKeys: { "Enter": "newlineAndIndentContinueMarkdownList" }
+    })
+  </script>
+</body>
+</html>
